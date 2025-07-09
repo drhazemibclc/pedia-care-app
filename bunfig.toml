@@ -1,0 +1,37 @@
+# bunfig.toml — Place this at the root of your monorepo
+
+# --- Runtime ---
+jsx = "react"
+jsxFactory = "h"
+jsxFragment = "Fragment"
+jsxImportSource = "react"
+smol = true
+logLevel = "debug"
+telemetry = false
+
+[loader]
+# when a .bagel file is imported, treat it like a tsx file
+".bagel" = "tsx"
+
+
+# --- Package Manager ---
+[install]
+optional = true
+dev = true
+peer = true
+production = false
+exact = true
+saveTextLockfile = true
+auto = "auto"
+frozenLockfile = false
+dryRun = false
+
+[install.lockfile]
+save = true
+# print = "yarn"
+
+# --- Run Command ---
+[run]
+shell = "system"
+bun = true
+silent = false

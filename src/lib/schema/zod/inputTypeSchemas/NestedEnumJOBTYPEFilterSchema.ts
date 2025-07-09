@@ -1,0 +1,23 @@
+import type { Prisma } from '@prisma/client'
+import { z } from 'zod'
+
+import { JOBTYPESchema } from './JOBTYPESchema'
+
+export const NestedEnumJOBTYPEFilterSchema: z.ZodType<Prisma.NestedEnumJOBTYPEFilter> = z
+	.object({
+		equals: z.lazy(() => JOBTYPESchema).optional(),
+		in: z
+			.lazy(() => JOBTYPESchema)
+			.array()
+			.optional(),
+		notIn: z
+			.lazy(() => JOBTYPESchema)
+			.array()
+			.optional(),
+		not: z
+			.union([z.lazy(() => JOBTYPESchema), z.lazy(() => NestedEnumJOBTYPEFilterSchema)])
+			.optional(),
+	})
+	.strict()
+
+export default NestedEnumJOBTYPEFilterSchema

@@ -1,0 +1,32 @@
+generator client {
+  provider               = "prisma-client-js"
+  previewFeatures        = ["views", "driverAdapters", "relationJoins"]
+  moduleFormat           = "esm"
+  generatedFileExtension = "ts"
+  importFileExtension    = "ts"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// generator zod {
+//   provider                         = "zod-prisma-types"
+//   output                           = "../../src/lib/schema/zod"
+//   useMultipleFiles                 = true
+//   writeBarrelFiles                 = true
+//   createInputTypes                 = true
+//   createModelTypes                 = true
+//   addInputTypeValidation           = true
+//   addIncludeType                   = false
+//   addSelectType                    = false
+//   validateWhereUniqueInput         = true
+//   createOptionalDefaultValuesTypes = true
+//   createRelationValuesTypes        = true
+//   createPartialTypes               = true
+//   useDefaultValidators             = true
+//   coerceDate                       = true
+//   writeNullishInModelTypes         = true
+// }

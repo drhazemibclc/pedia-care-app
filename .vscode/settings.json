@@ -1,0 +1,56 @@
+{
+	"[prisma]": {
+		"editor.defaultFormatter": "Prisma.prisma"
+	},
+	"editor.codeActionsOnSave": {
+		"source.addMissingImports.ts": "explicit",
+		"source.fixAll.biome": "explicit",
+		"source.removeUnused.ts": "explicit",
+		"source.sort.json": "explicit"
+	},
+	"editor.colorDecorators": true,
+	// Bonus: enable format-on-save if Prettier is set up
+	"editor.formatOnSave": true,
+	"editor.minimap.enabled": false,
+	// Optional: file associations (optional for .ts/.tsx)
+	"files.associations": {
+		"*.css": "tailwindcss",
+		"*.ts": "typescript",
+		"*.tsx": "typescriptreact"
+	},
+	// Optional: watch fewer files for performance
+	"files.watcherExclude": {
+		"**/.git/objects/**": true,
+		"**/.next/**": true,
+		"**/dist/**": true,
+		"**/node_modules/**": true
+	},
+	// Support for classNames in HTML, TSX, JSX, etc.
+	"tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list"],
+	// Support Tailwind-aware utilities like tw(), clsx(), etc.
+	"tailwindCSS.classFunctions": ["clsx", "classnames", "cva", "cn", "tw", "tv", "tw\\.[a-z]+"],
+	"tailwindCSS.codeActions": true,
+	// Show inline color decorators for classes like bg-red-500
+	"tailwindCSS.colorDecorators": true,
+	"tailwindCSS.emmetCompletions": true,
+	// Tailwind v4 support — specify the CSS entrypoint file
+	"tailwindCSS.experimental.configFile": "app/app.css", // ✅ update this to your actual Tailwind entry
+	"tailwindCSS.hovers": true,
+	"tailwindCSS.includeLanguages": {
+		"plaintext": "html"
+	},
+	"tailwindCSS.lint.cssConflict": "warning",
+	"tailwindCSS.lint.invalidApply": "error",
+	"tailwindCSS.lint.invalidConfigPath": "error",
+	// Lint rules
+	"tailwindCSS.lint.invalidScreen": "error",
+	"tailwindCSS.lint.invalidTailwindDirective": "error",
+	"tailwindCSS.lint.invalidVariant": "error",
+	"tailwindCSS.lint.recommendedVariantOrder": "warning",
+	"tailwindCSS.lint.usedBlocklistedClass": "warning",
+	"tailwindCSS.rootFontSize": 16,
+	// Show px equivalents on hover (rem → px)
+	"tailwindCSS.showPixelEquivalents": true,
+	"tailwindCSS.suggestions": true,
+	"tailwindCSS.validate": true
+}

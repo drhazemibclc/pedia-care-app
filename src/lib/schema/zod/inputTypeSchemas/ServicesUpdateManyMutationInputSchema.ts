@@ -1,0 +1,45 @@
+import type { Prisma } from '@prisma/client'
+import { z } from 'zod'
+
+import { BoolFieldUpdateOperationsInputSchema } from './BoolFieldUpdateOperationsInputSchema'
+import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema'
+import { FloatFieldUpdateOperationsInputSchema } from './FloatFieldUpdateOperationsInputSchema'
+import { NullableEnumServiceCategoryFieldUpdateOperationsInputSchema } from './NullableEnumServiceCategoryFieldUpdateOperationsInputSchema'
+import { NullableIntFieldUpdateOperationsInputSchema } from './NullableIntFieldUpdateOperationsInputSchema'
+import { ServiceCategorySchema } from './ServiceCategorySchema'
+import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema'
+
+export const ServicesUpdateManyMutationInputSchema: z.ZodType<Prisma.ServicesUpdateManyMutationInput> =
+	z
+		.object({
+			serviceName: z
+				.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)])
+				.optional(),
+			description: z
+				.union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)])
+				.optional(),
+			price: z.union([z.number(), z.lazy(() => FloatFieldUpdateOperationsInputSchema)]).optional(),
+			category: z
+				.union([
+					z.lazy(() => ServiceCategorySchema),
+					z.lazy(() => NullableEnumServiceCategoryFieldUpdateOperationsInputSchema),
+				])
+				.optional()
+				.nullable(),
+			duration: z
+				.union([z.number().int(), z.lazy(() => NullableIntFieldUpdateOperationsInputSchema)])
+				.optional()
+				.nullable(),
+			isAvailable: z
+				.union([z.boolean(), z.lazy(() => BoolFieldUpdateOperationsInputSchema)])
+				.optional(),
+			createdAt: z
+				.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)])
+				.optional(),
+			updatedAt: z
+				.union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)])
+				.optional(),
+		})
+		.strict()
+
+export default ServicesUpdateManyMutationInputSchema
